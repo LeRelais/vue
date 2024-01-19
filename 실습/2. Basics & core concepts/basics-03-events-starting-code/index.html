@@ -20,9 +20,15 @@
       <h2>Events in Action</h2>
       <button v-on:click="addCounter()">Add</button>
       <button v-on:click="reduceCounter()">Reduce</button>
+      <p v-once>Original: {{ counter }}</p>
       <p>Result: {{ counter }}</p>
-      <input type="text" v-on:input="updateName">
-      <p>Your Name : {{name}}</p>
+      <input type="text" v-bind:value="name" v-on:input="updateName" v-on:keyup.enter="confirmInput">
+      <button v-on:click="resetInput">Reset Input</button>
+      <p>Your Name : {{outputFullname()}}</p>
+      <form action="" v-on:submit.prevent="submitForm">
+          <input type="text">
+          <button>Sign Up</button>
+      </form>
     </section>
   </body>
 </html>

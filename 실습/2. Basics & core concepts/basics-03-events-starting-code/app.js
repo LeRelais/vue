@@ -3,9 +3,22 @@ const app = Vue.createApp({
     return {
       counter: 0,
       name: '',
+      confirmedName: '',
     };
   },
   methods:{
+    outputFullname(){
+      if(this.name != '')
+        return this.name + ' ' + 'Nam'
+    },
+    resetInput(){
+      this.name = ''
+    },
+    confirmInput(){
+      this.confirmedName = this.name
+    },
+    submitForm(event){
+    },
     addCounter(){
         this.counter += 1
     },
